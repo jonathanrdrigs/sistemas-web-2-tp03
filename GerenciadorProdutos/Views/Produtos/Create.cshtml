@@ -1,0 +1,21 @@
+﻿@model GerenciadorProdutos.Models.Produto
+
+@{
+    ViewData["Title"] = "Novo produto";
+}
+
+<h1 class="h3 mb-3">Novo produto</h1>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form asp-action="Create">
+            <partial name="_FormProduto" />
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

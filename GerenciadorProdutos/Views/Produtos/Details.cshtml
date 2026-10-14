@@ -1,0 +1,35 @@
+﻿@using System.Globalization
+@model GerenciadorProdutos.Models.Produto
+
+@{
+    ViewData["Title"] = "Detalhes do produto";
+    var ptBR = new CultureInfo("pt-BR");
+}
+
+<h1 class="h3 mb-3">Detalhes do produto</h1>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <dl class="row mb-0">
+            <dt class="col-sm-3">Código</dt>
+            <dd class="col-sm-9">@Model.Id</dd>
+
+            <dt class="col-sm-3">Nome</dt>
+            <dd class="col-sm-9">@Model.Nome</dd>
+
+            <dt class="col-sm-3">Descrição</dt>
+            <dd class="col-sm-9">@Model.Descricao</dd>
+
+            <dt class="col-sm-3">Preço</dt>
+            <dd class="col-sm-9">@Model.Preco.ToString("C", ptBR)</dd>
+
+            <dt class="col-sm-3">Estoque</dt>
+            <dd class="col-sm-9">@Model.QuantidadeEstoque unidade(s)</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</div>

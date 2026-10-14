@@ -1,0 +1,22 @@
+﻿@model GerenciadorProdutos.Models.Produto
+
+@{
+    ViewData["Title"] = "Editar produto";
+}
+
+<h1 class="h3 mb-3">Editar produto</h1>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="Id" />
+            <partial name="_FormProduto" />
+            <button type="submit" class="btn btn-primary">Salvar alterações</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
